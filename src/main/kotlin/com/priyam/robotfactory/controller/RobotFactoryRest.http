@@ -1,0 +1,65 @@
+### Intellij HTTP Client File
+### Valid Request 1
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "components": [
+    "I",
+    "A",
+    "D",
+    "F"
+  ]
+}
+
+### Invalid Request 1 - All part category not covered
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "components": [
+    "I",
+    "A",
+    "B",
+    "F"
+  ]
+}
+
+### Invalid Request 2 - List size not valid
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "components": [
+    "I",
+    "A",
+    "B"
+  ]
+}
+
+### Invalid Request 3 - Invalid component
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "components": [
+    "I",
+    "A",
+    "B",
+    "Z"
+  ]
+}
+
+### Invalid Request 4 - Duplicate component
+POST http://localhost:8080/orders
+Content-Type: application/json
+
+{
+  "components": [
+    "I",
+    "A",
+    "D",
+    "D"
+  ]
+}
+
